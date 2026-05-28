@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마포 노래방 상세 정보 - 가격·시설·리뷰 종합 비교</title>
+    <meta name="description" content="마포구 노래방의 업소별 상세 분석. 홍대·합정·상수 지역별 가격, 시설 등급, 실시간 리뷰 데이터를 제공합니다. 마포 노래방 선택의 기준이 되는 정확한 정보.">
+    <meta name="keywords" content="마포 노래방 정보, 마포 노래방 상세, 마포 노래방 가격 비교, 마포 노래방 시설 등급, 마포 노래방 리뷰, 홍대 노래방 정보, 합정 노래방">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+    <link rel="canonical" href="https://t3b04-mp-kb-info.pages.dev/detail">
+    <meta property="og:title" content="마포 노래방 상세 정보 - 가격·시설·리뷰 종합 비교">
+    <meta property="og:description" content="마포구 노래방의 업소별 상세 분석. 홍대·합정·상수 지역별 가격, 시설 등급, 실시간 리뷰 데이터를 제공합니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://t3b04-mp-kb-info.pages.dev/detail">
+    <meta property="og:locale" content="ko_KR">
+    <style>
+        /* 브루탈리스트 아방가르드 디자인 시스템 - 네온 보이드 테마 */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0b0b0e;
+            --bg-card: #141418;
+            --text: #e0e0e6;
+            --text-dim: #8a8a96;
+            --accent: #ff2e5b;
+            --accent2: #7b2ff7;
+            --neon-pink: #ff2e5b;
+            --neon-violet: #7b2ff7;
+            --neon-cyan: #00f0ff;
+            --border: 2px solid #2a2a35;
+            --border-accent: 2px solid var(--accent2);
+            --font-mono: 'Courier New', Courier, monospace;
+            --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --shadow-neon: 0 0 8px var(--neon-pink), 0 0 20px var(--neon-violet);
+        }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-sans);
+            line-height: 1.5;
+            margin: 0 auto;
+            max-width: 1280px;
+            padding: 0 20px;
+        }
+        a { color: var(--neon-cyan); text-decoration: none; }
+        a:hover { text-decoration: underline; text-shadow: 0 0 6px var(--neon-cyan); }
+
+        /* 네비게이션 - 햄버거 메뉴 */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: var(--border);
+            position: relative;
+        }
+        .nav__logo { font-family: var(--font-mono); font-size: 1.4rem; font-weight: 900; text-transform: uppercase; color: var(--neon-pink); }
+        .nav__menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav__menu li a { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); }
+        .nav__menu li a:hover { color: var(--neon-cyan); }
+        .nav__toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+        .nav__toggle span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            margin: 4px 0;
+            background: var(--text);
+            transition: all 0.3s ease;
+        }
+        @media (max-width: 768px) {
+            .nav__menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: var(--bg-card);
+                position: absolute;
+                top: 70px;
+                left: 0;
+                padding: 20px;
+                gap: 20px;
+                border: var(--border);
+                z-index: 100;
+            }
+            .nav__menu.active { display: flex; }
+            .nav__toggle { display: flex; }
+        }
+
+        /* 메인 콘텐츠 */
+        .headline {
+            font-family: var(--font-mono);
+            font-size: 2.6rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.1;
+            padding: 40px 0 10px 0;
+            border-bottom: var(--border);
+            text-shadow: 2px 2px 0 var(--neon-violet);
+        }
+        .subhead {
+            font-size: 1rem;
+            color: var(--text-dim);
+            margin: 15px 0 30px 0;
+            letter-spacing: 0.05em;
+        }
+
+        /* 테이블/카드 그리드 */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+
+        .card {
+            background: var(--bg-card);
+            border: var(--border);
+            padding: 20px;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover { box-shadow: var(--shadow-neon); }
+        .card__title {
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-bottom: 1px solid var(--neon-violet);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            color: var(--neon-pink);
+        }
+        .card__content { font-size: 0.95rem; line-height: 1.7; color: var(--text-dim); }
+        .card__content strong { color: var(--text); }
+
+        /* 데이터 표 */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin: 20px 0;
+        }
+        .data-table th {
+            background: var(--neon-violet);
+            color: var(--bg);
+            font-family: var(--font-mono);
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 12px 10px;
+            text-align: left;
+            border: 1px solid #1e1e28;
+        }
+        .data-table td {
+            padding: 10px;
+            border: 1px solid #2a2a35;
+            background: var(--bg-card);
+        }
+        .data-table tr:hover td { background: #1f1f2a; }
+
+        /* FAQ (FAQPage Schema) */
+        .faq-section { margin: 40px 0; }
+        .faq-title {
+            font-family: var(--font-mono);
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: var(--border-accent);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .faq-item {
+            background: var(--bg-card);
+            border: var(--border);
+            padding: 18px;
+            margin-bottom: 12px;
+        }
+        .faq-question {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--neon-cyan);
+            margin-bottom: 8px;
+            cursor: default;
+        }
+        .faq-answer {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.8;
+        }
+
+        /* 푸터 */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: var(--border);
+            margin-top: 60px;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        /* 유틸 */
+        .highlight { color: var(--neon-pink); font-weight: 700; }
+        .tag {
+            display: inline-block;
+            background: var(--neon-violet);
+            color: var(--bg);
+            padding: 2px 10px;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-right: 6px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav" role="navigation">
+            <div class="nav__logo">mp-kb-info</div>
+            <button class="nav__toggle" aria-label="메뉴 열기" onclick="this.classList.toggle('active'); document.querySelector('.nav__menu').classList.toggle('active');">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav__menu">
+                <li><a href="/">홈</a></li>
+                <li><a href="/list">목록</a></li>
+                <li><a href="/detail">상세정보</a></li>
+                <li><a href="/review">리뷰</a></li>
+                <li><a href="/about">소개</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="headline">마포 노래방 상세 분석</h1>
+        <p class="subhead">홍대·합정·상수 권역별 가격 · 시설 등급 · 교통 접근성 데이터 기반 리포트 (2025 Q1 기준)</p>
+
+        <section class="grid-2">
+            <div class="card">
+                <div class="card__title">📍 권역별 분포 및 접근성</div>
+                <div class="card__content">
+                    <p>마포구 전체 노래방 217개소 중 <span class="highlight">홍대입구역 반경 500m 내 74개소(34%)</span>가 위치. 지하철 2호선·경의중앙선·공항철도 3개 노선이 교차하는 역세권 특성상 도보 5분 이내 업소가 62%에 달함.</p><br>
+                    <p><strong>주요 권역별 밀도:</strong><br>
+                    ▶ 홍대 (서교동·동교동): 98개소 (평균 이용료 ￦10,200/h)<br>
+                    ▶ 합정 (합정동·서강동): 52개소 (평균 ￦8,700/h)<br>
+                    ▶ 상수 (상수동·망원동): 42개소 (평균 ￦7,900/h)<br>
+                    ▶ 공덕 (공덕동·도화동): 25개소 (평균 ￦9,500/h)</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card__title">📊 가격 비교표 (1시간 기준)</div>
+                <div class="card__content">
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>타입</th><th>최저가</th><th>평균가</th><th>최고가</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>코인노래방</td><td>￦2,500</td><td>￦4,800</td><td>￦7,000</td></tr>
+                            <tr><td>일반 반주방</td><td>￦8,000</td><td>￦12,000</td><td>￦18,000</td></tr>
+                            <tr><td>프리미엄 룸</td><td>￦15,000</td><td>￦22,000</td><td>￦35,000</td></tr>
+                            <tr><td>단체실 (4인↑)</td><td>￦25,000</td><td>￦38,000</td><td>￦60,000</td></tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top:10px; font-size:0.85rem; color:var(--text-dim);">*2025년 2월 현장 조사 기준, 업소별 상이<br>**코인노래방의 경우 15분 단위 과금 방식 포함</p>
+                </div>
+            </div>
+        </section>
+</body>
+</html>
