@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://sarakinhceo-gif.github.io/bp-t3b04-mp-kb-info//sitemap.xml
+Sitemap: https://t3b04-mp-kb-info.maphoshirts.com/sitemap.xml
