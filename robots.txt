@@ -1,3 +1,16 @@
 User-agent: *
 Allow: /
-Sitemap: https://t3b04-mp-kb-info.maphoshirts.com/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://t3b04-mp-kb-info.pages.dev/sitemap.xml
