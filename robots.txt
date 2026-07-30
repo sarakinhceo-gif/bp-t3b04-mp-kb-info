@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://t3b04-mp-kb-info.maphoshirts.com/sitemap.xml
+Sitemap: https://t3b04-mp-kb-info.maphoshirts.com/sitemap-pages.xml
