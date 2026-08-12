@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/2) · t3b04-mp-kb-info</title>
+  <meta name="description" content="t3b04-mp-kb-info에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://t3b04-mp-kb-info.maphoshirts.com/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ *, *::before, *::after {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ html {
+ font-size: 16px;
+ scroll-behavior: smooth;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ text-rendering: optimizeLegibility;
+ }
+
+ body {
+ font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+ line-height: 1.7;
+ color: #1a1a1a;
+ background-color: #fafafa;
+ transition: background-color 0.3s ease, color 0.3s ease;
+ letter-spacing: -0.01em;
+ }
+
+ body[data-theme="deeprose"] {
+ background-color: #fdf2f4;
+ color: #2c1810;
+ }
+
+ body[data-theme="deepwine"] {
+ background-color: #faf5f0;
+ color: #1a0f0a;
+ }
+
+ body[data-theme="deepwine"] .n-txt-8s0j,
+ body[data-theme="deepwine"] .k-list-n6gn {
+ background: linear-gradient(135deg, #2d1a14 0%, #1a0f0a 100%);
+ color: #f0e6d3;
+ border-left: 4px solid #8b2942;
+ }
+
+ body[data-theme="deepwine"] .n-head-x3t0,
+ body[data-theme="deepwine"] .k-btn-2sp8 {
+ color: #8b2942;
+ border-bottom: 2px solid #8b2942;
+ }
+
+ .wrapper {
+ max-width: 720px;
+ margin: 0 auto;
+ padding: 2rem 1.5rem 4rem;
+ }
+
+ .nav-present {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 0.75rem;
+ padding: 1.25rem 0 2rem;
+ border-bottom: 1px solid #e0d6cc;
+ margin-bottom: 2.5rem;
+ align-items: center;
+ justify-content: flex-start;
+ }
+
+ .nav-present a {
+ text-decoration: none;
+ color: #5c3d2e;
+ font-weight: 500;
+ font-size: 0.95rem;
+ padding: 0.4rem 1rem;
+ border-radius: 20px;
+ transition: all 0.25s ease;
+ background: rgba(139, 41, 66, 0.05);
+ letter-spacing: -0.3px;
+ }
+
+ .nav-present a:hover {
+ background: rgba(139, 41, 66, 0.15);
+ color: #8b2942;
+ transform: translateY(-1px);
+ }
+
+ .nav-present a.active {
+ background: #8b2942;
+ color: #fff;
+ font-weight: 600;
+ box-shadow: 0 4px 12px rgba(139, 41, 66, 0.25);
+ }
+
+ .n-head-x3t0 {
+ font-size: 2.5rem;
+ font-weight: 800;
+ letter-spacing: -1.2px;
+ line-height: 1.25;
+ margin-bottom: 1rem;
+ color: #1a0f0a;
+ padding-bottom: 0.75rem;
+ border-bottom: 2px solid #8b2942;
+ display: inline-block;
+ }
+
+ .k-subhead-r9m2 {
+ font-size: 1.15rem;
+ color: #6b4c3b;
+ margin-bottom: 2.5rem;
+ font-weight: 400;
+ letter-spacing: -0.3px;
+ }
+
+ .section-block {
+ margin-bottom: 3rem;
+ }
+
+ .section-block h2 {
+ font-size: 1.65rem;
+ font-weight: 700;
+ margin-bottom: 1.25rem;
+ color: #2c1810;
+ letter-spacing: -0.6px;
+ position: relative;
+ padding-left: 1rem;
+ }
+
+ .section-block h2::before {
+ content: '';
+ position: absolute;
+ left: 0;
+ top: 0.25rem;
+ bottom: 0.25rem;
+ width: 4px;
+ background: #8b2942;
+ border-radius: 2px;
+ }
+
+ .section-block p {
+ margin-bottom: 1.15rem;
+ color: #3d2c24;
+ font-size: 1.05rem;
+ letter-spacing: -0.2px;
+ }
+
+ .n-txt-8s0j {
+ background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%);
+ color: #f0e6d3;
+ padding: 1.75rem 2rem;
+ border-radius: 16px;
+ margin: 2rem 0;
+ border-left: 4px solid #8b2942;
+ font-size: 1rem;
+ line-height: 1.8;
+ box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+ }
+
+ .k-list-n6gn {
+ background: linear-gradient(135deg, #2b1a12 0%, #1a0f0a 100%);
+ color: #f0e6d3;
+ padding: 1.75rem 2rem;
+ border-radius: 16px;
+ margin: 2rem 0;
+ border-left: 4px solid #8b2942;
+ list-style: none;
+ box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+ }
+
+ .k-list-n6gn li {
+ padding: 0.6rem 0;
+ border-bottom: 1px solid rgba(240,230,211,0.15);
+ display: flex;
+ align-items: flex-start;
+ gap: 0.6rem;
+ font-size: 1rem;
+ }
+
+ .k-list-n6gn li:last-child {
+ border-bottom: none;
+ }
+
+ .k-list-n6gn li::before {
+ content: '◆';
+ color: #8b2942;
+ font-size: 0.7rem;
+ margin-top: 0.35rem;
+ flex-shrink: 0;
+ }
+
+ .k-btn-2sp3 {
+ display: inline-block;
+ background: transparent;
+ border: 2px solid #8b2942;
+ color: #8b2942;
+ padding: 0.75rem 2rem;
+ font-weight: 700;
+ font-size: 1rem;
+ border-radius: 30px;
+ text-decoration: none;
+ transition: all 0.3s ease;
+ letter-spacing: -0.3px;
+ margin-top: 1rem;
+ }
+
+ .k-btn-2sp3:hover {
+ background: #8b2942;
+ color: #fff;
+ transform: translateY(-2px);
+ box-shadow: 0 8px 20px rgba(139,41,66,0.3);
+ }
+
+ .info-card-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 1.5rem;
+ margin: 2rem 0;
+ }
+
+ .info-card {
+ background: #fff;
+ border-radius: 18px;
+ padding: 1.75rem;
+ border: 1px solid #e8ddd4;
+ transition: all 0.3s ease;
+ box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+ }
+
+ .info-card:hover {
+ border-color: #8b2942;
+ box-shadow: 0 12px 32px rgba(139,41,66,0.1);
+ transform: translateY(-3px);
+ }
+
+ .info-card h3 {
+ font-size: 1.2rem;
+ font-weight: 700;
+ color: #8b2942;
+ margin-bottom: 0.75rem;
+ letter-spacing: -0.4px;
+ }
+
+ .info-card p {
+ font-size: 0.95rem;
+ color: #5c4a3e;
+ margin-bottom: 0;
+ }
+
+ .faq-item {
+ border-bottom: 1px solid #e0d6cc;
+ padding: 1.25rem 0;
+ }
+
+ .faq-item h4 {
+ font-weight: 700;
+ font-size: 1.1rem;
+ color: #2c1810;
+ margin-bottom: 0.5rem;
+ cursor: pointer;
+ letter-spacing: -0.3px;
+ }
+
+ .faq-item p {
+ color: #5c4a3e;
+ font-size: 0.98rem;
+ }
+
+ .badge-group {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 0.5rem;
+ margin: 1.5rem 0;
+ }
+
+ .badge {
+ background: rgba(139,41,66,0.08);
+ color: #8b2942;
+ padding: 0.35rem 1rem;
+ border-radius: 20px;
+ font-size: 0.85rem;
+ font-weight: 600;
+ letter-spacing: -0.2px;
+ }
+
+ footer {
+ margin-top: 4rem;
+ padding-top: 2rem;
+ border-top: 1px solid #e0d6cc;
+ text-align: center;
+ color: #8c7b6f;
+ font-size: 0.85rem;
+ }
+
+ @media (max-width: 768px) {
+ .wrapper {
+ padding: 1.5rem 1rem 3rem;
+ }
+
+ .n-head-x3t0 {
+ font-size: 1.9rem;
+ }
+
+ .info-grid {
+ grid-template-columns: 1fr;
+ gap: 1rem;
+ }
+
+ .nav-present {
+ gap: 0.5rem;
+ padding: 1rem 0 1.5rem;
+ }
+
+ .nav-present a {
+ font-size: 0.85rem;
+ padding: 0.35rem 0.8rem;
+ }
+
+ .n-txt-8s0j,
+ .k-list-n6gn {
+ padding: 1.25rem 1.5rem;
+ }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (1/2) · t3b04-mp-kb-info">
+  <meta property="og:description" content="t3b04-mp-kb-info에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://t3b04-mp-kb-info.maphoshirts.com/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <h1 class="n-head-x3t0">조건별로 고르는<br>마포 노래방 완벽 정리</h1>
+ <p class="k-subt-r9m2">처음 가는 사람도 실패하지 않는 선택법. 인원부터 시간대까지 꼼꼼하게 따져봤습니다.</p>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 32개 · 1/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1696.html">마포 노래방 정보: 편안한 분위기와 깨끗한 시설을 찾다</a>
+        <p class="post-item__summary">마포 구역에 있는 노래방은 젊은이와 가족 단위까지 모두 만족할 수 있는 편안한 공간을 제공합니다. 내부는 무대 조명과 고음질 스피커로 꾸며져 있어 실내에서도 완벽한 배틀이 가능합니다. 접근성도 뛰어</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1697.html">마포에서 노래방 찾는다면? 동네별 특징과 분위기 가이드</a>
+        <p class="post-item__summary">마포는 홍대입구에서 합정, 상수, 망원까지 이어지는 음악과 문화의 중심지다. 보통 노래방 하면 홍대 앞 골목에 밀집된 프렌차이즈 코인노래방을 가장 먼저 떠올리게 된다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1698.html">마포 노래방 정보, 밤새 즐기는 힐링 공간</a>
+        <p class="post-item__summary">마포에서 찾아볼 수 있는 다양한 노래방 중 하나를 소개합니다. 고급 스피커와 조명 시스템을 갖추어 마포의 밤을 더욱 빛나게 합니다. 넓은 내부 공간은 가족이나 친구 모임에 안성맞춤입니다. 좁은 구석</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1699.html">마포 노래방 정보 찾는다면 놓치지 말아야 할 포인트</a>
+        <p class="post-item__summary">마포 지역은 다양한 노래방이 밀집한 곳으로 유명하다. 홍대입구부터 합정까지 이어지는 상권에는 각기 다른 콘셉트와 가격대를 가진 업소들이 자리 잡고 있다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1700.html">마포 노래방에서 여유를 찾아보자</a>
+        <p class="post-item__summary">마포에 위치한 신규 노래방은 전통적인 장르에서부터 최신 K‑팝까지 다양하게 부를 수 있는 장르를 갖추고 있다. 전문 음향 시스템은 고음과 저음을 모두 충실히 재생해 수면과 같은 감각을 선사한다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1701.html">마포에서 노래방 찾는다면? 분위기 좋은 곳 중심으로 살펴보기</a>
+        <p class="post-item__summary">마포에는 회식이나 모임 후에 들르기 좋은 노래방이 곳곳에 자리 잡고 있다. 홍대입구 역세권부터 합정, 상수 쪽까지 지역에 따라 콘셉트와 분위기가 제각각이라 선택 폭이 넓다. 최근에는 시설이 깔끔하고</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1702.html">마포 노래방 정보: 안심하고 즐길 수 있는 장소와 팁</a>
+        <p class="post-item__summary">마포 지역의 노래방은 분위기와 시설이 각기 다른 모습으로 끊임없이 진화하고 있습니다. 가까운 사람들이 선호하는 화려한 인테리어와 정숙한 음악 라인업은 두 가지 스타일을 동시에 만족시키죠.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1703.html">마포 노래방, 분위기 좋은 곳 찾는다면</a>
+        <p class="post-item__summary">마포구에는 회식이나 모임 자리에서 부담 없이 들를 수 있는 노래방이 많다. 홍대입구부터 합정, 상수까지 지역별로 콘셉트가 확실히 나뉘어서 선택하는 재미도 쏠쏠하다. 최근에는 머신뿐 아니라 내부 인테</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1704.html">마포 노래방 정보: 서울의 소리와 즐거움을 만나는 순간</a>
+        <p class="post-item__summary">마포 지역에 펼쳐진 노래방은 다양한 주제와 음악 장르를 제공한다. 각 시설은 크리에이티브 인테리어와 편리한 입지 덕분에 사람들의 젊음을 끌어모아 주차, 편안한 음향을 자랑한다. 노래방 선택 시 예약</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1705.html">마포 노래방 정보와 최신 트렌드 한눈에 보기</a>
+        <p class="post-item__summary">마포에는 다양한 스타일의 노래방이 자리 잡고 있어 선택의 폭이 넓다. 홍대 인근은 감각적인 인테리어와 최신 음향 시설을 갖춘 곳이 많고, 공덕이나 합정 쪽은 가족 단위 이용객을 고려한 공간이 주를 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1706.html">마포 노래방 정보: 지역별 인기 선택 가이드</a>
+        <p class="post-item__summary">마포는 서울의 대표적인 문화·술·음악 명소가 모여 있는 곳이다. 특히 노래방이 밀집해 있어 각기 다른 컨셉과 가격대를 가진 곳들이 즐비하다. 이 지역을 정복하기 위해서는 먼저 연주시뿌리와 가격, 방</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1707.html">마포에서 노래방 찾을 때 꼭 알아야 할 정보</a>
+        <p class="post-item__summary">마포 지역은 젊은 인구가 많고 유흥 시설이 밀집해 있어 노래방 선택 폭이 넓은 편이다. 홍대입구역과 합정역 주변을 중심으로 다양한 스타일의 노래방이 자리잡고 있다. 코인노래방부터 일반 노래방까지 취</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1708.html">마포 노래방 찾아내기: 즐겁고 편리한 선택</a>
+        <p class="post-item__summary">마포 거리를 걸으며 찾은 마포 노래방 정보는 예전부터 많은 사람들이 찾는 숨은 명소다. 다양한 장르를 즐길 수 있는 실내음악이 가득하고 아늑한 인테리어가 매력적이다. 특히 가격대가 비교적 합리적이라</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1709.html">홍대입구부터 합정까지 마포 노래방 정보 모음</a>
+        <p class="post-item__summary">마포는 홍대입구, 합정, 상수, 서교동 등 젊은 문화의 중심지가 밀집한 지역이라 노래방 또한 매우 다양한 스타일과 가격대로 운영되고 있다. 기본 코인 노래방 스타일부터 프리미엄 감성 인테리어를 적용</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1710.html">마포 노래방 정보와 온라인 트래픽 전략 연결하기</a>
+        <p class="post-item__summary">마포의 노래방은 젊은이들의 문화가 살아 숨쉬는 곳이다. 나른한 주말마다 친구들과 함께 가면 음악과 친구가 교차하는 순간이 찾아온다. 이 지역에는 전통적 분위기와 현대적 장비가 조화를 이루는 매력적인</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1711.html">마포에서 노래방 찾는다면? 최신 정보와 이용 팁</a>
+        <p class="post-item__summary">서울 마포구는 홍대, 합정, 상수 등 젊은 문화의 중심지라 노래방 업소가 많기로 유명하다. 주말마다 다양한 연령대의 방문객으로 북적이며, 코인노래방부터 프리미엄 노래방까지 선택지도 폭넓다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1712.html">마포 노래방 정보: 도심 속 음악의 품격과 최신 트렌드</a>
+        <p class="post-item__summary">마포는 도심 속 한가운데에 자리해 있기 때문에, 노래방 이용객에게 편리한 교통과 다양한 맛집이 곁은 큰 장점이 있습니다. 최근에는 개성 넘치는 인테리어와 고품질 사운드를 제공하는 곳이 늘어나, 마포</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1713.html">마포에서 노래방 찾는다면? 분위기와 시스템 모두 챙기는 법</a>
+        <p class="post-item__summary">마포에는 홍대입구, 합정, 상수, 망원 등 지역 특색이 뚜렷한 동네가 많아 노래방 선택지도 다양합니다. 감성을 중시하는 인테리어부터 실용적인 대형 룸까지 각기 다른 콘셉트로 운영되는 매장이 늘고 있</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1714.html">마포 노래방 정보: 편안함과 최신 사운드가 결합된 최고의 선택</a>
+        <p class="post-item__summary">마포 구역에 자리 잡은 노래방은 젊은 세대부터 노래 애호가까지 다양한 층이 찾는 명소이다. 편안한 분위기와 최신 음향 장비를 갖추고 있어 리모델링으로 한층 품격을 높였다. 특히 카페 모양의 인테리어</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0489.html">마포 노래방 정보: ishikyujin 사이트 초행자 주의점</a>
+        <p class="post-item__summary">마포 지역에서 노래방을 찾다가 예상치 못한 어려움에 직면하는 경우가 있습니다. 특히 검색 엔진 알고리즘의 변화로 인해 방문하려던 업체의 정보가 노출되지 않거나, 순위가 급락하는 상황은 종종 발생합니</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
